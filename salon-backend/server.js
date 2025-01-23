@@ -31,16 +31,7 @@ const Appointment = mongoose.model(
   })
 );
 
-// Product Model (for castor oil and other products)
-const Product = mongoose.model(
-  "Product",
-  new mongoose.Schema({
-    name: String,
-    description: String,
-    price: Number,
-    imageUrl: String,
-  })
-);
+
 
 // Blog Model
 const Blog = mongoose.model(
@@ -54,18 +45,7 @@ const Blog = mongoose.model(
 
 // Routes
 
-// Get Salon Services
-app.get("/services", (req, res) => {
-  const services = [
-    { name: "Hairdressing", price: 50 },
-    { name: "Manicure", price: 30 },
-    { name: "Pedicure", price: 40 },
-    { name: "Massage", price: 70 },
-    { name: "Foot Care", price: 50 },
-    { name: "Haircut", price: 30 },
-  ];
-  res.json(services);
-});
+
 
 // Book an Appointment
 app.post("/appointment", (req, res) => {
@@ -78,13 +58,13 @@ app.post("/appointment", (req, res) => {
       res.status(500).json({ success: false, message: err.message })
     );
 });
-
-// Get Products (Castor Oil and others)
-app.get("/products", (req, res) => {
-  Product.find()
-    .then((products) => res.json(products))
-    .catch((err) => res.status(500).json({ message: err.message }));
+app.get("/api/appointments", (req, res) => {
+  Appointment.find()
+    .then(appointments => res.json(appointments))
+    .catch(err => res.status(400).json("Error: " + err));
 });
+
+
 
 // Get Blog Posts
 app.get("/blogs", (req, res) => {
@@ -92,9 +72,18 @@ app.get("/blogs", (req, res) => {
     .then((blogs) => res.json(blogs))
     .catch((err) => res.status(500).json({ message: err.message }));
 });
+// Serve the root route (GET /)
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
+
+app.get("/contact", (req, res) => {
+  res.send("Contact us page");
+});
 
 // Server Setup
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
