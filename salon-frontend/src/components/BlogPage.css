@@ -1,0 +1,42 @@
+/* frontend/src/components/Blog.css */
+.blog-container {
+  background-color: #f8f1e4;
+  padding: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: maroon;
+}
+
+.blog-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.blog-post {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.blog-post h3 {
+  font-size: 1.8rem;
+  color: maroon;
+}
+
+.blog-post p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}

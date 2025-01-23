@@ -31,8 +31,6 @@ const Appointment = mongoose.model(
   })
 );
 
-
-
 // Blog Model
 const Blog = mongoose.model(
   "Blog",
@@ -44,8 +42,6 @@ const Blog = mongoose.model(
 );
 
 // Routes
-
-
 
 // Book an Appointment
 app.post("/appointment", (req, res) => {
@@ -60,11 +56,22 @@ app.post("/appointment", (req, res) => {
 });
 app.get("/api/appointments", (req, res) => {
   Appointment.find()
-    .then(appointments => res.json(appointments))
-    .catch(err => res.status(400).json("Error: " + err));
+    .then((appointments) => res.json(appointments))
+    .catch((err) => res.status(400).json("Error: " + err));
 });
 
+// backend/server.js
 
+app.post("/api/contact", (req, res) => {
+  const { name, email, message } = req.body;
+
+  console.log(
+    `Contact Form Submission: Name: ${name}, Email: ${email}, Message: ${message}`
+  );
+
+  // For now, just send a success response.
+  res.json({ status: "success", message: "Message received!" });
+});
 
 // Get Blog Posts
 app.get("/blogs", (req, res) => {
@@ -76,7 +83,6 @@ app.get("/blogs", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-
 
 app.get("/contact", (req, res) => {
   res.send("Contact us page");

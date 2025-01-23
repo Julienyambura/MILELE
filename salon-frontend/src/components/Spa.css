@@ -1,0 +1,76 @@
+/* frontend/src/components/Spa.css */
+
+.service-detail {
+  padding: 30px;
+  background-color: #f8f1e4;
+  text-align: center;
+}
+
+.spa-detail {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.service-title {
+  font-size: 2.5rem;
+  color: maroon;
+  margin-bottom: 20px;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.service-subtitle {
+  font-size: 1.8rem;
+  color: maroon;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.service-list {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #333;
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.service-list li {
+  margin-bottom: 8px;
+}
+
+.service-image-container {
+  margin: 20px 0;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-appointment-btn {
+  padding: 10px 20px;
+  background-color: maroon;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.book-appointment-btn:hover {
+  background-color: #800000; /* Darker shade of maroon */
+}
+
+.appointment-link {
+  text-decoration: none;
+  color: white;
+}
